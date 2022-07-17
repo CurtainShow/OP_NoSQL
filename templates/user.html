@@ -1,0 +1,538 @@
+<html>
+    <head>
+        <title>PY.GG</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css') }}" />
+        <script src="{{ url_for('static',filename='main.js') }}"></script>
+    </head>
+    <body>
+
+        <!-- <center><h1>Welcome back, {{user}} !</h1></center> -->
+        <div class="block-center">
+
+        
+        <center><div class="user_info">
+            <div class="wrapper">
+                <div class="picture_level">
+                    <div class="user_picture_profile">
+                        <img src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon4764.jpg?image=q_auto&image=q_auto,f_webp,w_auto&v=1657873250979" alt="profile image">
+                        <div class="user_level">
+                            <span>{{user_level}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="user_ranked_infos">
+                    <div class="user_name">{{user}}</div>
+                    <div class="user_rank_stats">{{user_ranked}} - {{user_ranked_stats}} LP</div>
+                    <div class="user_rank_stats">{{user_ranked_stats_wins}} Wins - {{user_ranked_stats_losses}} Loses</div>
+                </div>
+            </div>
+        </div></center>
+
+        <center><div class="match_list">
+            <div class="match">
+                <li class="first_match">
+                    <div class="tuile" {{x_1}}>
+                        <div class="game_infos">
+                            <div class="type">{{match_type}}</div>
+                            <div class="timestamp">{{match_duration}}</div>
+                            <div class="result">{{result_game}}</div>
+                        </div>
+                        <div class="infos">
+                            <div>
+                                <div class="champion">
+                                    <div class="icon">
+                                        <a href="">
+                                            <img src="https://opgg-static.akamaized.net/images/lol/champion/Shyvana.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_96&v=1657873250979" width="48" height="48" alt="">
+                                            <span class="champion-level">18</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="kda">
+                                    <div class="k-d-a">
+                                        <span>{{user_kill}}</span>
+                                         / 
+                                        <span class="d">{{user_death}}</span>
+                                         / 
+                                        <span>{{user_assists}}</span>
+                                    </div>
+                                    <div class="ratio">
+                                        <span>{{kda}}:1</span>
+                                        KDA
+                                    </div>
+                                </div>
+                                <div class="stats">
+                                    <div class="ward">
+                                        Control Ward {{ward}}
+                                    </div>
+                                    <div class="average-tier">
+                                        <div style="position: relative;">
+                                            {{user_ranked}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="items">
+                                    <ul>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/6664.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/3121.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/3111.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/3742.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/6664.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/3076.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="participants">
+                            <ul>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Yone.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion1}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Teemo.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion2}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Zed.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion3}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Nunu.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion4}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Yuumi.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion5}}
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Yone.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion6}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Teemo.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion7}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Zed.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion8}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Nunu.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion9}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Yuumi.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion10}}
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="first_match">
+                    <div class="tuile" {{x_2}}>
+                        <div class="game_infos">
+                            <div class="type">{{match_type_2}}</div>
+                            <div class="timestamp">{{match_duration_2}}</div>
+                            <div class="result">{{result_game_2}}</div>
+                        </div>
+                        <div class="infos">
+                            <div>
+                                <div class="champion">
+                                    <div class="icon">
+                                        <a href="">
+                                            <img src="https://opgg-static.akamaized.net/images/lol/champion/Shyvana.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_96&v=1657873250979" width="48" height="48" alt="">
+                                            <span class="champion-level">16</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="kda">
+                                    <div class="k-d-a">
+                                        <span>{{user_kill_2}}</span>
+                                         / 
+                                        <span class="d">{{user_death_2}}</span>
+                                         / 
+                                        <span>{{user_assists_2}}</span>
+                                    </div>
+                                    <div class="ratio">
+                                        <span>{{kda_2}}:1</span>
+                                        KDA
+                                    </div>
+                                </div>
+                                <div class="stats">
+                                    <div class="ward">
+                                        Control Ward {{ward_2}}
+                                    </div>
+                                    <div class="average-tier">
+                                        <div style="position: relative;">
+                                            {{user_ranked}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="items">
+                                    <ul>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/6664.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/3121.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/3111.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/3742.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/6664.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/3076.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="participants">
+                            <ul>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Yone.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion1_2}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Teemo.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion2_2}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Zed.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion3_2}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Nunu.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion4_2}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Yuumi.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion5_2}}
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Yone.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion6_2}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Teemo.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion7_2}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Zed.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion8_2}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Nunu.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion9_2}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Yuumi.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion10_2}}
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="first_match">
+                    <div class="tuile" {{x_3}}>
+                        <div class="game_infos">
+                            <div class="type">{{match_type_3}}</div>
+                            <div class="timestamp">{{match_duration_3}}</div>
+                            <div class="result">{{result_game_3}}</div>
+                        </div>
+                        <div class="infos">
+                            <div>
+                                <div class="champion">
+                                    <div class="icon">
+                                        <a href="">
+                                            <img src="https://opgg-static.akamaized.net/images/lol/champion/Shyvana.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_96&v=1657873250979" width="48" height="48" alt="">
+                                            <span class="champion-level">17</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="kda">
+                                    <div class="k-d-a">
+                                        <span>{{user_kill_3}}</span>
+                                         / 
+                                        <span class="d">{{user_death_3}}</span>
+                                         / 
+                                        <span>{{user_assists_3}}</span>
+                                    </div>
+                                    <div class="ratio">
+                                        <span>{{kda_3}}:1</span>
+                                        KDA
+                                    </div>
+                                </div>
+                                <div class="stats">
+                                    <div class="ward">
+                                        Control Ward {{ward_3}}
+                                    </div>
+                                    <div class="average-tier">
+                                        <div style="position: relative;">
+                                            {{user_ranked}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="items">
+                                    <ul>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/6664.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/3121.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/3111.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/3742.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/6664.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="position: relative;">
+                                                <img src="https://opgg-static.akamaized.net/images/lol/item/3076.png?image=q_auto,f_webp,w_44&v=1657873250979" width="22" alt="">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="participants">
+                            <ul>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Yone.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion1_3}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Teemo.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion2_3}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Zed.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion3_3}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Nunu.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion4_3}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Yuumi.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion5_3}}
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Yone.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion6_3}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Teemo.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion7_3}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Zed.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion8_3}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Nunu.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion9_3}}
+                                    </div>
+                                </li>
+                                <li class="other-champion">
+                                    <div class="icon">
+                                        <img src="https://opgg-static.akamaized.net/images/lol/champion/Yuumi.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_32&v=1657873250979"  width="16" alt="">
+                                    </div>
+                                    <div class="name">
+                                        {{champion10_3}}
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </div>
+        </div></center>
+        </div>
+    </body>
+</html>

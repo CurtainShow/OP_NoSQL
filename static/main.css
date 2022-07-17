@@ -1,0 +1,323 @@
+html, body, button, select, input, textarea, label, a, table {
+    font-family: Roboto, sans-serif;
+}
+
+div {
+    display: block;
+}
+
+img {
+    border: 0px;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+body, h1, h2, h3, h4, p, ol, ul, dl, dd, button {
+    margin: 0px;
+    padding: 0px;
+}
+
+.block-center {
+    top: 50%;
+    left: 50%;
+}
+
+.wrapper {
+    display: flex;
+    width: 230px;
+    margin: 0px auto;
+    -webkit-box-pack: justify;
+    text-align: center;
+    justify-content: center;
+    margin-top: 6rem;
+}
+
+.picture_level {
+    padding: 45px 0px 25px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.picture_level .user_picture_profile {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.picture_level .user_picture_profile img {
+    border-radius: 20px;
+}
+
+.picture_level .user_level {
+    height: 20px;
+    margin-top: -11px;
+    text-align: center;
+}
+
+.picture_level .user_level span {
+    display: inline-block;
+    line-height: 20px;
+    padding: 0px 8px;
+    font-size: 12px;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(32, 45, 55);
+    font-family: Roboto, sans-serif;
+}
+
+.user_ranked_infos {
+    margin-left: 24px;
+    margin-top: 45px;
+}
+
+.user_ranked_infos .user_name {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 32px;
+    margin-top: 8px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.user_ranked_infos .user_rank_stats {
+    display: flex;
+    line-height: 16px;
+    margin-top: 6px;
+    font-size: 12px;
+}
+
+
+.match_list {
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 8px;
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.match_list .match {
+    margin-top: 8px;
+}
+
+.match_list .match .first_match {
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.match_list .match .first_match .tuile {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 96px;
+    border-radius: 4px;
+    border-left-width: 6px;
+    border-left-style: solid;
+    border-color: var(--red500);
+    background-color: rgb(227, 227, 227);
+    margin-bottom: 10px;
+}
+
+
+.match_list .match .first_match .tuile.defeat {
+    background-color: rgba(215, 8, 8, 0.533);
+}
+
+.match_list .match .first_match .tuile .game_infos {
+    width: 108px;
+    margin-left: 12px;
+    color: var(--gray500);
+    line-height: 16px;
+    text-align: center;
+    justify-content: center;
+}
+
+.match_list .match .first_match .tuile .game_infos .type {
+    font-weight: bold;
+    color: var(--red600);
+}
+
+.match_list .match .first_match .tuile .game_infos .timestamp {
+    margin-left: 12px;
+    color: var(--gray500);
+    line-height: 16px;
+    margin-right: 10px;
+}
+
+.match_list .match .first_match .tuile .game_infos .result {
+    font-weight: bold;
+}
+
+.match_list .match .first_match .tuile .infos {
+    margin-left: 8px;
+}
+
+.match_list .match .first_match .tuile .infos > div:nth-of-type(1) {
+    display: flex;
+}
+
+.match_list .match .first_match .tuile .infos .champion {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.match_list .match .first_match .tuile .infos .champion .icon a{
+    position: relative;
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+.match_list .match .first_match .tuile .infos .champion .icon a img {
+    display: block;
+    border-radius: 50%;
+}
+
+.match_list .match .first_match .tuile .infos .champion .icon .champion-level {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+    background: rgb(32, 45, 55);
+    font-family: Roboto, sans-serif;
+}
+
+
+.match_list .match .first_match .tuile .infos .kda {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    width: 107px;
+    padding-right: 12px;
+    margin-right: 8px;
+    margin-left: 12px;
+}
+
+.match_list .match .first_match .tuile .infos .kda .k-d-a {
+    line-height: 22px;
+    font-size: 15px;
+    color: var(--gray400);
+    font-family: Roboto, sans-serif;
+}
+
+.match_list .match .first_match .tuile .infos .kda .k-d-a span {
+    font-weight: bold;
+    color: var(--gray900);
+}
+
+.match_list .match .first_match .tuile .infos .kda .k-d-a .d {
+    color: rgb(177, 9, 9);
+}
+
+.match_list .match .first_match .tuile .infos .kda .ratio {
+    line-height: 16px;
+    color: var(--gray500);
+}
+
+.match_list .match .first_match .tuile .infos .kda .ratio span {
+    line-height: 16px;
+    color: var(--gray500);
+} 
+
+
+
+
+.match_list .match .first_match .tuile .infos .stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    justify-content: center;
+    width: 100px;
+    color: var(--gray500);
+    font-size: 11px;
+    margin-top: 20px;
+}
+
+.match_list .match .first_match .tuile .infos .stats .average-tier{
+    font-weight: 700;
+    text-transform: capitalize;
+    font-family: Roboto, sans-serif;
+}
+
+
+
+.match_list .match .first_match .tuile .infos > div:nth-of-type(2) .items {
+    display: flex;
+}
+
+.match_list .match .first_match .tuile .infos > div:nth-of-type(2) .items ul {
+    display: flex;
+}
+
+.match_list .match .first_match .tuile .infos > div:nth-of-type(2) .items ul li:nth-of-type(1) {
+    margin-left: 0px;
+    list-style: none;
+}
+
+.match_list .match .first_match .tuile .infos > div:nth-of-type(2) .items ul li img {
+    border-radius: 4px;
+    margin-right: 2px;
+    margin-top: 5px;
+}
+
+
+
+
+
+.match_list .match .first_match .tuile .participants {
+    display: flex;
+    margin-left: 12px;
+}
+
+.match_list .match .first_match .tuile .participants ul:nth-of-type(1) {
+    margin-right: 8px
+}
+
+.other-champion {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 88px;
+    height: 18px;
+    text-align: left;
+    white-space: nowrap; 
+}
+
+.other-champion .icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.other-champion .icon img {
+    border-radius: 5px;
+}
+
+.other-champion .name {
+    display: inline-block;
+    max-width: 60px;
+    vertical-align: middle;
+    color: var(--gray500);
+}
