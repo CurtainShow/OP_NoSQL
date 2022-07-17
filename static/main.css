@@ -344,3 +344,78 @@ body {
     vertical-align: middle;
     color: var(--gray500);
 }
+
+
+
+
+
+
+
+.form {
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 19%);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    background: #FFF;
+    border-radius: 30px;
+    height: 60px;
+    text-align: left;
+    margin-top: 25%;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+.form >div:first-of-type {
+    padding-left: 32px;
+    padding-right: 8px;
+    margin-right: 8px;
+}
+
+.form >div {
+    position: relative;
+    height: 40px;
+}
+
+.form small, .form  label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #202D37;
+    color: var(--gray900);
+    margin-bottom: 4px;
+    font-style: normal;
+}
+
+.form >button {
+    padding-right: 24px;
+    padding-left: 12px;
+    height: 100%;
+}
+
+button {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.form button[type="submit"] {
+    background-image: url(https://s-lol-web.op.gg/images/icon/icon-gg.svg);
+    background-repeat: no-repeat;
+    -webkit-background-size: 42px;
+    background-size: 42px;
+    -webkit-background-position: 12px center;
+    background-position: 12px center;
+    width: 42px;
+    font-size: 0;
+    box-sizing: content-box;
+}

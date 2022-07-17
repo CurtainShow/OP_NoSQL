@@ -23,7 +23,7 @@ def login():
         user = request.form["nm"]
         user_region = request.form["region"]
 
-        #get_user_informations(user_region, user)
+        get_user_informations(user_region, user)
 
         # ! Get The Information About User After Calling API
         json_file = open('AccountInfos.json')
@@ -95,7 +95,10 @@ def login():
             except KeyError:
                 pass
 
-        kda = (user_kill + user_assists) / user_death
+        if user_death > 0:
+            kda = (user_kill + user_assists) / user_death
+        else:
+            kda = (user_kill + user_assists)
 
 
 
@@ -158,8 +161,11 @@ def login():
             except KeyError:
                 pass
 
-        kda_2 = (user_kill_2 + user_assists_2) / user_death_2
 
+        if user_death_2 > 0:
+            kda_2 = (user_kill_2 + user_assists_2) / user_death_2
+        else:
+            kda_2 = (user_kill_2 + user_assists_2)
 
 
 
@@ -222,7 +228,10 @@ def login():
             except KeyError:
                 pass
 
-        kda_3 = (user_kill_3 + user_assists_3) / user_death_3
+        if user_death_3 > 0:
+            kda_3 = (user_kill_3 + user_assists_3) / user_death_3
+        else:
+            kda_3 = (user_kill_3 + user_assists_3)
 
     
 

@@ -1,17 +1,30 @@
-<center>{% block title %}Login Page{% endblock %}
+<center>
 
 {% block content %}
 
-<form action="#" method="post">
-    <p>Name:</p>
-    <p><input type="text" name="nm"/></p>
-    <select name="region" id="region">
-        <option value="EUW1">EUW1</option>
-        <option value="NA1">NA</option>
-        <option value="KR1">KR</option>
-        <option value="JP1">JP</option>
-    </select>
-    <p><input type="submit" value="submit"/></p>
-</form></center>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css') }}" />
+</head>
+
+<div>
+    <form class="form" action="#" method="post">
+        <div>
+            <small class="label">Region</small>
+            <select name="region" id="region">
+                <option value="EUW1">EUW1</option>
+                <option value="NA1">NA</option>
+                <option value="KR1">KR</option>
+                <option value="JP1">JP</option>
+            </select> 
+        </div>
+        <div>
+            <small class="label">Search</small>
+            <p><input type="text" name="nm" value="Username"/></p>
+        </div>
+        <button type="submit">.GG</button>
+    </form>
+</div>
+
+</center>
 
 {% endblock %}
