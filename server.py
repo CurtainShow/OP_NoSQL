@@ -50,7 +50,7 @@ def login():
 
 
         # ! Get The Information About User Game After Calling API
-        json_file_game_1 = open('AccountMatchInfos_100.json')
+        json_file_game_1 = open('AccountMatchInfos_106.json')
         data_game_1 = json.load(json_file_game_1)
 
         # ! Parsing the dictionarry user games
@@ -133,7 +133,7 @@ def login():
 
 
         # ! Get The Information About User Game After Calling API
-        json_file_game_2 = open('AccountMatchInfos_101.json')
+        json_file_game_2 = open('AccountMatchInfos_103.json')
         data_game_2 = json.load(json_file_game_2)
 
         # ! Parsing the dictionarry user games
@@ -149,16 +149,26 @@ def login():
         user_assists_2 = ''
         ward_2 = ''
 
-        champion1_2 = data_game_2[0]['championName']
-        champion2_2 = data_game_2[1]['championName']
-        champion3_2 = data_game_2[2]['championName']
-        champion4_2 = data_game_2[3]['championName']
-        champion5_2 = data_game_2[4]['championName']
-        champion6_2 = data_game_2[5]['championName']
-        champion7_2 = data_game_2[6]['championName']
-        champion8_2 = data_game_2[7]['championName']
-        champion9_2 = data_game_2[8]['championName']
-        champion10_2 = data_game_2[9]['championName']
+        champion1_2 = database['data'][data_game_2[0]['championName']]['id']
+        champion2_2 = database['data'][data_game_2[1]['championName']]['id']
+        champion3_2 = database['data'][data_game_2[2]['championName']]['id']
+        champion4_2 = database['data'][data_game_2[3]['championName']]['id']
+        champion5_2 = database['data'][data_game_2[4]['championName']]['id']
+        champion6_2 = database['data'][data_game_2[5]['championName']]['id']
+        champion7_2 = database['data'][data_game_2[6]['championName']]['id']
+        champion8_2 = database['data'][data_game_2[7]['championName']]['id']
+        champion9_2 = database['data'][data_game_2[8]['championName']]['id']
+        champion10_2 = database['data'][data_game_2[9]['championName']]['id']
+        champion1_2_img = database['data'][data_game_2[0]['championName']]['image']['full']
+        champion2_2_img = database['data'][data_game_2[1]['championName']]['image']['full']
+        champion3_2_img = database['data'][data_game_2[2]['championName']]['image']['full']
+        champion4_2_img = database['data'][data_game_2[3]['championName']]['image']['full']
+        champion5_2_img = database['data'][data_game_2[4]['championName']]['image']['full']
+        champion6_2_img = database['data'][data_game_2[5]['championName']]['image']['full']
+        champion7_2_img = database['data'][data_game_2[6]['championName']]['image']['full']
+        champion8_2_img = database['data'][data_game_2[7]['championName']]['image']['full']
+        champion9_2_img = database['data'][data_game_2[8]['championName']]['image']['full']
+        champion10_2_img = database['data'][data_game_2[9]['championName']]['image']['full']
 
 
         for user_in_match2 in data_game_2:
@@ -166,6 +176,13 @@ def login():
                 #print(user)
                 game_user_puuid_2 = user_in_match2['puuid']
                 if game_user_puuid_2 == user_puuid:
+                    game_user_champion_2 = database['data'][user_in_match2['championName']]['image']['full']
+                    game_user_2_item0 = items['data'][str(user_in_match2['item0'])]['image']['full']
+                    game_user_2_item1 = items['data'][str(user_in_match2['item1'])]['image']['full']
+                    game_user_2_item2 = items['data'][str(user_in_match2['item2'])]['image']['full']
+                    game_user_2_item3 = items['data'][str(user_in_match2['item3'])]['image']['full']
+                    game_user_2_item4 = items['data'][str(user_in_match2['item4'])]['image']['full']
+                    game_user_2_item5 = items['data'][str(user_in_match2['item5'])]['image']['full']
                     result_game_2 = user_in_match2['win']
                     if user_in_match2['win'] == True:
                         result_game_2 = "Victoire"
@@ -198,7 +215,7 @@ def login():
 
 
          # ! Get The Information About User Game After Calling API
-        json_file_game_3 = open('AccountMatchInfos_102.json')
+        json_file_game_3 = open('AccountMatchInfos_104.json')
         data_game_3 = json.load(json_file_game_3)
 
         # ! Parsing the dictionarry user games
@@ -215,16 +232,26 @@ def login():
         ward_3 = ''
         x_3=''
 
-        champion1_3 = data_game_3[0]['championName']
-        champion2_3 = data_game_3[1]['championName']
-        champion3_3 = data_game_3[2]['championName']
-        champion4_3 = data_game_3[3]['championName']
-        champion5_3 = data_game_3[4]['championName']
-        champion6_3 = data_game_3[5]['championName']
-        champion7_3 = data_game_3[6]['championName']
-        champion8_3 = data_game_3[7]['championName']
-        champion9_3 = data_game_3[8]['championName']
-        champion10_3 = data_game_3[9]['championName']
+        champion1_3 = database['data'][data_game_3[0]['championName']]['id']
+        champion2_3 = database['data'][data_game_3[1]['championName']]['id']
+        champion3_3 = database['data'][data_game_3[2]['championName']]['id']
+        champion4_3 = database['data'][data_game_3[3]['championName']]['id']
+        champion5_3 = database['data'][data_game_3[4]['championName']]['id']
+        champion6_3 = database['data'][data_game_3[5]['championName']]['id']
+        champion7_3 = database['data'][data_game_3[6]['championName']]['id']
+        champion8_3 = database['data'][data_game_3[7]['championName']]['id']
+        champion9_3 = database['data'][data_game_3[8]['championName']]['id']
+        champion10_3 = database['data'][data_game_3[9]['championName']]['id']
+        champion1_3_img = database['data'][data_game_3[0]['championName']]['image']['full']
+        champion2_3_img = database['data'][data_game_3[1]['championName']]['image']['full']
+        champion3_3_img = database['data'][data_game_3[2]['championName']]['image']['full']
+        champion4_3_img = database['data'][data_game_3[3]['championName']]['image']['full']
+        champion5_3_img = database['data'][data_game_3[4]['championName']]['image']['full']
+        champion6_3_img = database['data'][data_game_3[5]['championName']]['image']['full']
+        champion7_3_img = database['data'][data_game_3[6]['championName']]['image']['full']
+        champion8_3_img = database['data'][data_game_3[7]['championName']]['image']['full']
+        champion9_3_img = database['data'][data_game_3[8]['championName']]['image']['full']
+        champion10_3_img = database['data'][data_game_3[9]['championName']]['image']['full']
 
 
         for user_in_match3 in data_game_3:
@@ -232,6 +259,13 @@ def login():
                 #print(user)
                 game_user_puuid_3 = user_in_match3['puuid']
                 if game_user_puuid_3 == user_puuid:
+                    game_user_champion_3 = database['data'][user_in_match3['championName']]['image']['full']
+                    game_user_3_item0 = items['data'][str(user_in_match3['item0'])]['image']['full']
+                    game_user_3_item1 = items['data'][str(user_in_match3['item1'])]['image']['full']
+                    game_user_3_item2 = items['data'][str(user_in_match3['item2'])]['image']['full']
+                    game_user_3_item3 = items['data'][str(user_in_match3['item3'])]['image']['full']
+                    game_user_3_item4 = items['data'][str(user_in_match3['item4'])]['image']['full']
+                    game_user_3_item5 = items['data'][str(user_in_match3['item5'])]['image']['full']
                     result_game_3 = user_in_match3['win']
                     if user_in_match3['win'] == True:
                         result_game_3 = "Victoire"
@@ -330,6 +364,25 @@ def login():
             champion9_2=champion9_2,
             champion10_2=champion10_2,
 
+            champion1_2_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion1_2_img,
+            champion2_2_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion2_2_img,
+            champion3_2_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion3_2_img,
+            champion4_2_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion4_2_img,
+            champion5_2_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion5_2_img,
+            champion6_2_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion6_2_img,
+            champion7_2_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion7_2_img,
+            champion8_2_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion8_2_img,
+            champion9_2_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion9_2_img,
+            champion10_2_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion10_2_img,
+
+            user_2_champion="https://opgg-static.akamaized.net/images/lol/champion/" + game_user_champion_2,
+            user_2_item0="https://opgg-static.akamaized.net/images/lol/item/" + game_user_2_item0,
+            user_2_item1="https://opgg-static.akamaized.net/images/lol/item/" + game_user_2_item1,
+            user_2_item2="https://opgg-static.akamaized.net/images/lol/item/" + game_user_2_item2,
+            user_2_item3="https://opgg-static.akamaized.net/images/lol/item/" + game_user_2_item3,
+            user_2_item4="https://opgg-static.akamaized.net/images/lol/item/" + game_user_2_item4,
+            user_2_item5="https://opgg-static.akamaized.net/images/lol/item/" + game_user_2_item5,
+
             match_type_3=match_type_3,
             match_duration_3=res_3,
             result_game_3=result_game_3,
@@ -338,6 +391,7 @@ def login():
             user_assists_3=user_assists_3,
             kda_3=round(kda_3, 2),
             ward_3=ward_3,
+
             champion1_3=champion1_3,
             champion2_3=champion2_3,
             champion3_3=champion3_3,
@@ -348,6 +402,25 @@ def login():
             champion8_3=champion8_3,
             champion9_3=champion9_3,
             champion10_3=champion10_3,
+
+            champion1_3_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion1_3_img,
+            champion2_3_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion2_3_img,
+            champion3_3_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion3_3_img,
+            champion4_3_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion4_3_img,
+            champion5_3_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion5_3_img,
+            champion6_3_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion6_3_img,
+            champion7_3_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion7_3_img,
+            champion8_3_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion8_3_img,
+            champion9_3_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion9_3_img,
+            champion10_3_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion10_3_img,
+
+            user_3_champion="https://opgg-static.akamaized.net/images/lol/champion/" + game_user_champion_3,
+            user_3_item0="https://opgg-static.akamaized.net/images/lol/item/" + game_user_3_item0,
+            user_3_item1="https://opgg-static.akamaized.net/images/lol/item/" + game_user_3_item1,
+            user_3_item2="https://opgg-static.akamaized.net/images/lol/item/" + game_user_3_item2,
+            user_3_item3="https://opgg-static.akamaized.net/images/lol/item/" + game_user_3_item3,
+            user_3_item4="https://opgg-static.akamaized.net/images/lol/item/" + game_user_3_item4,
+            user_3_item5="https://opgg-static.akamaized.net/images/lol/item/" + game_user_3_item5,
 
             x_1 = x_1,
             x_2=x_2,
