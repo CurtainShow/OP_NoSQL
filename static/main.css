@@ -49,8 +49,8 @@ body {
     left: 50%;
     background-color: rgba(255, 255, 255, 0.795);
     padding-bottom: 40px;
-    margin-left: 50vh;
-    margin-right: 50vh;
+    margin-left: 40vh;
+    margin-right: 40vh;
     border-radius: 20px;
 }
 
@@ -418,4 +418,14 @@ button {
     width: 42px;
     font-size: 0;
     box-sizing: content-box;
+}
+
+.img-form {
+    text-align: center;
+    justify-content: center;
+    height: 170px;
+    border-radius: 10%;
+    margin-top: 250px;
+    margin-bottom: -340px;
+
 }

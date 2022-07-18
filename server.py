@@ -23,7 +23,7 @@ def login():
         user = request.form["nm"]
         user_region = request.form["region"]
 
-        get_user_informations(user_region, user)
+        #get_user_informations(user_region, user)
 
         # ! Get The Information About User After Calling API
         json_file = open('AccountInfos.json')
