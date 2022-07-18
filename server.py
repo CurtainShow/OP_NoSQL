@@ -3,10 +3,20 @@ from riotwatcher import LolWatcher
 import json
 from function import get_user_informations
 import time
+import pymongo
+import certifi
+ca = certifi.where()
 
 # golbal variables
 api_key = 'RGAPI-768271ad-868d-4f83-8a46-39dfc9bf7d53'
 watcher = LolWatcher(api_key)
+
+client = pymongo.MongoClient("mongodb+srv://nosqlproject:nosqlproject@cluster1.2yidsz2.mongodb.net/?retryWrites=true&w=majority", tlsCAFile=ca)
+db = client.League
+
+database = db.Champions.find_one({"type": 'champion'})
+items = db.Items.find_one({"type": "item"}) 
+
 
 app = Flask(__name__)
 
@@ -56,16 +66,26 @@ def login():
         user_assists = ''
         ward = ''
 
-        champion1 = data_game_1[0]['championName']
-        champion2 = data_game_1[1]['championName']
-        champion3 = data_game_1[2]['championName']
-        champion4 = data_game_1[3]['championName']
-        champion5 = data_game_1[4]['championName']
-        champion6 = data_game_1[5]['championName']
-        champion7 = data_game_1[6]['championName']
-        champion8 = data_game_1[7]['championName']
-        champion9 = data_game_1[8]['championName']
-        champion10 = data_game_1[9]['championName']
+        champion1 = database['data'][data_game_1[0]['championName']]['id']
+        champion1_img = database['data'][data_game_1[0]['championName']]['image']['full']
+        champion2 = database['data'][data_game_1[1]['championName']]['id']
+        champion2_img = database['data'][data_game_1[1]['championName']]['image']['full']
+        champion3 = database['data'][data_game_1[2]['championName']]['id']
+        champion3_img = database['data'][data_game_1[2]['championName']]['image']['full']
+        champion4 = database['data'][data_game_1[3]['championName']]['id']
+        champion4_img = database['data'][data_game_1[3]['championName']]['image']['full']
+        champion5 = database['data'][data_game_1[4]['championName']]['id']
+        champion5_img = database['data'][data_game_1[4]['championName']]['image']['full']
+        champion6 = database['data'][data_game_1[5]['championName']]['id']
+        champion6_img = database['data'][data_game_1[5]['championName']]['image']['full']
+        champion7 = database['data'][data_game_1[6]['championName']]['id']
+        champion7_img = database['data'][data_game_1[6]['championName']]['image']['full']
+        champion8 = database['data'][data_game_1[7]['championName']]['id']
+        champion8_img = database['data'][data_game_1[7]['championName']]['image']['full']
+        champion9 = database['data'][data_game_1[8]['championName']]['id']
+        champion9_img = database['data'][data_game_1[8]['championName']]['image']['full']
+        champion10 = database['data'][data_game_1[9]['championName']]['id']
+        champion10_img = database['data'][data_game_1[9]['championName']]['image']['full']
 
 
         for user_in_match in data_game_1:
@@ -73,6 +93,13 @@ def login():
                 #print(user)
                 game_user_puuid = user_in_match['puuid']
                 if game_user_puuid == user_puuid:
+                    game_user_champion = database['data'][user_in_match['championName']]['image']['full']
+                    game_user_item0 = items['data'][str(user_in_match['item0'])]['image']['full']
+                    game_user_item1 = items['data'][str(user_in_match['item1'])]['image']['full']
+                    game_user_item2 = items['data'][str(user_in_match['item2'])]['image']['full']
+                    game_user_item3 = items['data'][str(user_in_match['item3'])]['image']['full']
+                    game_user_item4 = items['data'][str(user_in_match['item4'])]['image']['full']
+                    game_user_item5 = items['data'][str(user_in_match['item5'])]['image']['full']
                     result_game = user_in_match['win']
                     if user_in_match['win'] == True:
                         result_game = "Victoire"
@@ -264,6 +291,25 @@ def login():
             champion8=champion8,
             champion9=champion9,
             champion10=champion10,
+
+            user_champion="https://opgg-static.akamaized.net/images/lol/champion/" + game_user_champion,
+            user_item0="https://opgg-static.akamaized.net/images/lol/item/" + game_user_item0,
+            user_item1="https://opgg-static.akamaized.net/images/lol/item/" + game_user_item1,
+            user_item2="https://opgg-static.akamaized.net/images/lol/item/" + game_user_item2,
+            user_item3="https://opgg-static.akamaized.net/images/lol/item/" + game_user_item3,
+            user_item4 = "https://opgg-static.akamaized.net/images/lol/item/" + game_user_item4,
+            user_item5 = "https://opgg-static.akamaized.net/images/lol/item/" + game_user_item5,
+
+            champion1_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion1_img,
+            champion2_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion2_img,
+            champion3_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion3_img,
+            champion4_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion4_img,
+            champion5_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion5_img,
+            champion6_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion6_img,
+            champion7_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion7_img,
+            champion8_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion8_img,
+            champion9_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion9_img,
+            champion10_img="https://opgg-static.akamaized.net/images/lol/champion/" + champion10_img,
 
             match_type_2=match_type_2,
             match_duration_2=res_2,
